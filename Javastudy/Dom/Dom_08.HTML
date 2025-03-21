@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 체크박스마다 value 값을 지정.  -->
+    <!-- 체크박스(함수) 지정,  -->
+    <input type="checkbox" id="check1" name="myAdd" value="1500" checked="true" onclick="getCheckbox('check1')">
+    <label for="check1">추가채소 1500원</label><br>
+    
+    <!--  -->
+    <input type="checkbox" id="check2" name="myAdd" value="1000" onclick="getCheckbox('check2')">
+    <label for="check2">추가음표 1000원</label><br>
+    
+    <!--  -->
+    <input type="checkbox" id="check3" name="myAdd" value="500" onclick="getCheckbox('check3')">
+    <label for="check3">추가피클 500원</label><br>
+    <hr>
+    
+    
+    <p id="result">추가금액: 0원</p>
+    
+    
+    <input type="button" value="reset" onclick="resetOder()">
+
+    <script>
+    
+        // 변수 지정
+        let sum = 0;
+        
+        //
+        const items=document.getElementsByName("myAdd");
+        
+        
+        for(let item of items){
+        
+        // checked 속성이 참?거짓? 체크 확인
+            if(item.checked){
+        
+                // 지정된 value 속성 확인 숫자로 parseInt로 인하여 숫자변환
+                sum = sum + parseInt(item.value); 
+            }
+        }
+        document.getElementById("result").innerText = `추가금액: ${sum}원`;
+
+        // 체크박스 ID만 호출하여 체크 여부 확인
+        function getCheckbox(id) {        
+            
+            
+            const item = document.getElementById(id);
+            
+            // 체크박스 체크가 되어있다면 sum+parseInt 하여 sum에 넣어라
+            if(item.checked){
+                
+                
+                sum = sum + parseInt(item.value); //
+            
+            // 체크박스 체크가 안되어있다면 sum-parseInt 하여 sum 에 넣어라
+            }else{
+                
+                
+                sum = sum - parseInt(item.value);
+            }          
+
+            document.getElementById("result").innerText = `추가금액: ${sum}원`;
+        }
+
+        function resetOder(){
+
+            let sum = 0;
+            //const items = document.getElementsByName("myAdd");
+
+            for(let item of items){
+                
+                
+                item.checked = false;
+            }
+
+            document.getElementById("result").innerText = "추가금액 : 0원";
+        }
+
+    </script>
+
+
+</body>
+
+</html>

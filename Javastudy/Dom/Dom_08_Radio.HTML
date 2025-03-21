@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- radio 버튼인 경우 Name을 그룹지어 이름을 지정해줌 -->
+    <input type="Radio" name="color" value="red">RED<br>
+    <input type="Radio" name="color" value="GREEN">GREEN<br>
+    <input type="Radio" name="color" value="BLUE">BLUE<br>
+    <input type="button" value="choice" onclick="getRadio()"><br>
+    
+    
+    
+    
+    
+    <h2 id="result"></h2>
+
+</body>
+    <script>
+        function getRadio(){
+          // 위에 HTML 전체중에서 type=radio 인 태그 
+          
+          // 배열 
+          const choice = document.querySelectorAll("[type='radio']");
+          
+          // 배열에 i는 0 이고, i 보다 클때까지 증가하여 진행 반복
+          for (let i = 0; i < choice.length; i++){
+            
+          // 체크하였을때 .value 는 속성 
+            if (choice[i].checked) {
+                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            // 
+            document.getElementById("result").innerText=`${choice[i].value}`;
+                
+                // id 값이 result인 태그의 style속성을 가져온다.
+                document.getElementById("result").value
+
+                /* 
+                성희(보조 강사) :
+                현재 작성한 코드는 style 속성이 아닌 value 속성을 가져온겁니다.
+                다시 한번 밑에 작성한 주석을 읽어보시고 왜 틀렸는지
+                내일 다시 해당 코드들이 어떤 거인지 물어볼게요
+                */
+
+                break;
+            }
+          }
+
+        }
+    </script>
+</html>
+
+<!-- 
+
+document.querySelectorAll("[type='radio']");
+document => 객체    
+    querySelectorAll() => 함수
+        "[type='radio']" = > 매개변수
+객체안에 쿼리셀렉트올이라는 함수, 함수는 매개변수를 받으면, 매개변수에 맞는 조건에 태그를 찾아온다.
+반환값이 복수일때는 배열로 반환
+타입이 라디오인 태그들을 가져온다        
+checked 는 = true , false
+-->
+<!-- 
+document.getElementById("result").innerText = `${choice[i].value}`;
+
+ID값이 result인 태그르 가져온다.
+document.getElementById("result").innerText
+document    =>객체
+    getElementById() => 함수
+        "result" => 함수 소괄호안에 매개변수
+            innerText => 속성
+
+함수와 속성을 구분하는건 괄호()
+
+
+        
+-->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이더</title>
+</head>
+<body style="width: 300px; height: 300px; text-align: center">
+    <div class="slider-container">
+    
+
+
+    </div>
+<script>
+    
+    
+    let index = 0;
+    
+    
+    const images = [
+
+
+
+
+    ];
+    function prevImage(){
+        
+        //index란 숫자의 정수 
+        //해석: image의 length 수를 측정해준다
+        index = (index - 1 + image.length) % image.length;
+        
+        
+        document.getElementById("slider-image").src - images[index];
+
+    }
+
+    function nextImage(){
+        
+        
+        index = (index +1) % image.length;
+        
+        
+        document.getElementById("solider-image").src - image[index];
+
+    }
+
+
+
+
+</script>   
+
+</body>
+</html>

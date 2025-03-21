@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // let은 선언 , prompt(입력 또는 출력)
+        // 
+        // 
+        let id = "wogh397";
+        let pw = "wogh393";
+
+        let inputId = prompt("ID를 입력하셈");
+        let inputPw = prompt("pw를 입력하셈");
+
+        if(inputId === id){
+            if(inputPw === pw){
+                document.write("로그인에 성공했습니다.");
+            }else{
+                document.write("패스워드가 틀렸습니다.");
+            }           
+        }else{
+            document.write("ID를 잘못입력했습니다");            
+        }
+
+        // if(id !== inputId ) {
+        // !== <-- 같지 않다
+        //     document.write("ID를 잘못입력했습니다");
+        // }
+
+        // if(pw !== inputPw) {
+        //     document.write("Pw가 틀렸습니다.");
+        // }
+        // document.write("로그인에 성공하였습니다.");
+        // 기존 저장된 pw 
+        // 사용자 Pw를 받고
+        // 받은 pw 참,거짓 결과 출력 
+        
+        
+
+        
+    
+        
+    </script>
+</body>
+</html>

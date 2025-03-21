@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>while</h2>
+    <!-- <script>
+        let i = 1;           // 조건값
+        while (i < 5) {      // 반복 조건
+            document.write(i + "");
+            i++;              // 증가
+        }
+    </script>
+    <hr> -->
+    <h2>for</h2>
+
+    <script>
+        // While 괄호안에 있는 조건이 참일동안 실행을 반복 함수
+        let evensum = 0;
+        let oddSum = 0;
+        //        
+        for (let k=1; k <= 100; ++k){ 
+            if (k % 2 === 0){
+                evensum = evensum + k ;
+            }else{
+                oddSum = oddSum + k ;
+            }
+           
+        }
+
+    document.write("1~100 까지의 짝수의합계:" + evensum + "<br>");
+    document.write("1~100 까지의  홀수의합계:" + oddSum + "<br>");
+    </script>
+</body>
+</html>

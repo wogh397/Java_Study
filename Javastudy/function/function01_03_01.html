@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+        let str = "";
+
+        if (score < 0 || score > 100) {
+            str += "유효하지 않은 점수입니다."
+        } else {
+            if (score >= 60){
+                switch(score /10){
+                 
+                case 10:
+                    str += "A등급입니다.";
+                    break;
+                case 9:
+                    str += "A등급입니다.";
+                    break;
+                case 8:
+                    str += "B등급입니다.";
+                    break;
+                case 7:
+                    str += "C등급입니다.";
+                    break;
+                default:
+                    str += "D등급입니다.";
+                }
+            }
+            else {
+                str += "불합격입니다.";
+            }
+            str += "합격입니다.<br>";
+        }
+
+        document.writeparseInt(prompt("점수를 입력하세요: (0~100)"));
+    </script>
+</body>
+</html>    

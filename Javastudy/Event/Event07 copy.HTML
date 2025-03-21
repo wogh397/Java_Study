@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체와 매개변수</title>   
+    <!--<form> 태그를 써서 만든후 ,
+      동의 체크박스 on,off에 따라 동의합니다 메세지 노출
+      제출을 누르면 
+      아래에 내용이 저장,표시되게끔 작성  
+      클릭하면 submitevent 발생,
+      폼안에 내용 제출 폼을대상으로 발생
+      방지해주는 함수
+      event.preventDefault();
+      -->
+  
+</head>
+
+
+<body>
+  <!-- form을 불러오려면 form에도 이름을 붙여줘야함. -->
+  <form name="f1">
+    <input type="text" id="name1" name="ok">
+    <input type="checkbox" id="check" name="ok" value="on">
+    <label>아이디와 비밀번호 입력해주세요.</label>
+    <input type="submit">
+  
+  </form>
+  <p id="showname"> </p>
+  <p id="showagree"> </p>
+  
+  <script>
+
+    //
+    //Forms에 myFormname 을 addEventListener 
+    document.forms['myFormname'].addEventListener("sumit",  (e)=>{
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      //
+      //
+      let agree = e.target.checkAgree.checked;
+
+      document.getElementById("showname").innerText="이름:"
+      document.getElementById("showagree").innerText= " 약관 동의 : " +
+                                  ( agree ? "동의함" : "동의하지 않음");
+    })
+    
+
+
+  </script>
+
+</body>
+</html>

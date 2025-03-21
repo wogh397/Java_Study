@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript : string_03</title>
+
+    <style>
+        textarea {
+            width: 500px;
+            height: 100px;
+            resize: none;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <div>
+        <h1>단어 첫 글자 대문자로 변환</h1>
+
+        <textarea id="content" placeholder="문장을 입력하세요."></textarea><br>
+        <button type="button" onclick="upperString()">변환</button>
+
+        <h2>결과:</h2>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        // [문제의 조건]
+        // 공백을 기준으로 단어 첫 글자 대문자로 변환
+
+
+        // #1
+        // -------------------------------------------------------------------
+
+        function upperString() {
+            const text = document.getElementById("content").value; 
+            let array = [];
+            const result = document.getElementById("result");
+            let textToArray = text.split(" ");
+            
+            for(let word of textToArray){ 
+              array.push (word.charAt(0).toUpperCase()+ word.slice(1));
+            }
+            result.innerText = array.join(" ");
+                        
+        }
+        
+
+        // -------------------------------------------------------------------
+        // [과정]
+        // 1. 
+
+        
+        // [noti]
+
+
+
+
+        
+        // #2
+        // -------------------------------------------------------------------
+        function capitalizedwords90{
+          const text = document.getElementById("wordInput").value;
+          const splitArr = text.split(" ");
+
+          for(let i=0; i<splitArr.length; i++){
+            splitArr[i] = splitArr[i].charAt(0).toUpperCase() + splitArr[i].slice(1)
+          }
+
+        }
+
+        // -------------------------------------------------------------------
+        // [과정]
+        // 1. 내용
+
+
+        // [error]
+        // 1. 내용
+
+        
+        // [noti]
+        // - 내용
+
+        // #3
+        // -------------------------------------------------------------------
+        function capitalizedwords90{
+          const text = document.getElementById("wordInput").value;
+          const splitArr = text.split(" ");
+
+          const joinStr = text.split(" ")
+
+          splitArr.map((word)=>word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ");
+
+          const resultStr = document.getElementById("result");
+          resultStr.innerText = joinStr;
+
+        }
+
+        // -------------------------------------------------------------------
+        // [과정]
+        // 1. 내용
+
+
+        // [error]
+        // 1. 내용
+
+        
+        // [noti]
+        // - 내용
+
+        // #4
+        //---------------------------------------------------------------------
+        
+    </script>
+  </body>
+</html>

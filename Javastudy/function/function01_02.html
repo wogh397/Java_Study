@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function repeatString(str1, times){
+        //     let result = "";
+        //     for(let i=0; i<times ; i++){
+        //         result = result + str1; 
+        //     }
+
+        //     return result;
+        // }
+
+        // document.write(repeatString("==", 20));
+        
+
+        function reverseString(str1){        
+        
+        let result = "";       
+        
+         document.write(str1.length);
+        
+            for(let i=str1.length-1; i>=0; i--){
+               
+                result = result + str1[i];
+            }
+             return result;
+        }
+             document.write(reverseString("abccvc"));
+    
+
+    </script>
+</body>
+</html>

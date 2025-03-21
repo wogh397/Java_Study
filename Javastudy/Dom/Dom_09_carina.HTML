@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        text-align: center;
+    }
+
+    #container:hover > #rotate {
+        display: inline-block;
+    }
+
+    #rotate {
+        display: none;
+        font-size: 40px;
+        color: blue;
+    }
+
+    div {
+        width: 100%;
+        height: 200px;
+    }
+</style>
+</head>
+<body style="text-align: center">
+    
+    <!-- 스크린 카리나1.gif 불러옴, id는 image  -->
+    <img id ="image" src="../../카리나1.gif"><br>
+    
+    <!-- input 버튼타입, value는 Change  -->
+    <input type="button" value="Change" onclick="changeImage()">
+    
+    <script>
+    
+    // 토글 트루일때
+    let toggle = true;
+    
+    
+    function changeImage(){
+    
+
+        if (toggle)
+    // 가장 먼저 ++토글 나머지 2 == 0과 같다 
+    
+    // if (++toggle % 2 == 0)
+    
+    // Id=image로 가져오다. 
+            document.getElementById("image").src = "../../카리나1.gif";
+        else
+    
+    
+            document.getElementById("image").src = "../../카리나2.gif";
+        
+        //toggle   =   !toggle
+        //토글(트루) =   토글(펄스)<-- !toggle 은 트루 or 펄스의 반대
+        toggle = !toggle;
+
+        }
+
+    </script>
+</body>
+</html>

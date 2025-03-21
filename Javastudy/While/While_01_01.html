@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        // 목적 : 1 ~ 100까지의 합계
+
+        //  sum에 저장할 변수
+        let num = 0;
+        
+        // 0 ~ 100까지의 합계를 저장 변수 0으로 선언 및 초기화
+        // 담는 그릇
+        let sum = 0;
+        
+
+        // 소괄호안 조건 (num < 100 : )
+        // 
+        while (num < 100) {
+            num++;
+            sum += num; //  sum : 5050 
+        }
+
+        document.write(sum);
+
+    </script> -->
+    <!-- <script>
+        // 목적 : 1 ~ 100 짝수의 합계
+        
+        let num = 0;
+
+        // 담는 그릇 2~100 짝수의 합계
+        let evensum = 0;
+
+        // num < 100 은 99까지만 실행(반복) 
+        // num <= 100 은 100포함 100까지 실행(반복)
+        while(num <= 100){
+            evensum += num;
+            num += 2;
+        // num = num + 2; 
+        }
+
+        document.write(evensum)
+        
+    </script> -->
+    <script>
+        // 목적 1 ~ 100 홀수의 합계
+        let num = 0;
+        let oddSum = 0;
+        
+        while(num <= 100){
+            num++; // 3
+            if(num % 2===1){ // 1 % 2 === 1
+                oddSum = oddSum + num;
+                document.write(num+"<br>")
+            }
+        }
+        document.write(oddSum)
+    </script>
+</body>
+
+</html>

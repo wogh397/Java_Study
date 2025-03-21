@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>노드 추가하기</title>
+    <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+    <div id="target">
+        <p id="p1"> 첫 번째 노드</p>
+        <p id="p2"> 두 번째 노드</p>
+        <p id="p3"> 세 번째 노드</p>
+
+
+
+    </div>
+    <button onclick="removeNode()">노드 지우기</button>
+    <!-- <h3 안에 Id="target" 이름 지정 -->
+    <!-- <h3 id="target"> 사이트 추가하기 </h3> -->
+
+    <!-- onclick="addNode"라는 이름 지정 -->
+    <!-- <input type="button" value="add" onclick="addNode(`https://daum.net`)"> -->
+    
+    
+    <script>
+        let num = 1;
+        function removeNode(){
+            const parent = document.getElementById("target");
+            const child = document.getElementById;
+            parent.removeChild(child);
+            num++;
+        }
+
+
+//------------------------------------------------------------------------------------------------
+        //  
+        // function addNode(t){
+        //     let node1= document.createElement("hr");
+        //     let node2= document.createElement("a");
+        //     node2.href = t;
+        //     node2.innerText=t;
+        //     document.body.appendChild(node1);
+        //     document.body.appendChild(node2);
+
+
+        // }
+
+
+
+//-------------------------------------------------------------------------------------------------
+
+
+
+        // 위 input 에 onclick addNode라고 지정한 태그요소를 아래에 불러오기 위해
+        // function addNode(t)라고 지정
+        
+        // function addNode(t) {
+
+
+        //     let node = document.createElement("a");
+            
+            
+        //     node.href = t;
+            
+            
+        //     node.innerHTML = `<hr>${t}`;
+            
+            
+        //     document.getElementById("target").appendChild(node);
+        // }
+
+    </script>
+ 
+</body>
+</html>

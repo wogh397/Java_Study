@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+body, div, ul, ol, li, dl, dt,
+h1, h2, h3, h4, h5, h6, 
+form, fieldset, legend, input, select, textarea, button 
+table, th, td, tr, p{
+    margin: 0; padding: 0;
+}
+
+input, textarea, select{
+    font-family: inherit;
+    font-size: inherit;
+}
+
+ul>li, ol>li{
+    list-style-type: none;
+}
+
+.clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+.clearfix:after {clear: both;}
+
+/*----------------------------------------------------------------*/
+body{
+    background-color: #808080;
+    font-family: "맑은 고딕";
+    font-size: 12px;
+}
+
+.wrap{
+    padding:10px;
+    width: 700px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #000;
+}
+
+h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/*---*/
+ol#path{
+    padding:10px;
+    background-color: #00ff00;
+    border: 4px solid #ff0000;
+}
+
+#path>li{
+    float: left;
+    background-color: #ff00ff;
+    border: 1px solid #000;
+ 
+}
+/*---*/
+
+
+
+.form-group{
+    margin: 0px 0px 10px 0px
+}
+
+
+.form-group label{
+    display: inline-block;
+ 
+    /*border: 1px solid #000;*/
+}
+
+.form-group .form-text{
+    display: inline-block;
+    width: 80px;
+    /*border: 1px solid #000;*/
+}
+
+.form-group #sel-board{
+    width: 200px;
+}
+
+.form-group #txt-title{
+    width: 550px;
+}
+
+.form-group #txt-password{
+    width: 200px;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"]{
+    margin: 0px 10px 0px 0px;
+}
+
+.form-group #txt-content{
+    width: 637px;
+    height: 80px;
+}
+
+
+.btn-group{
+    padding: 15px 0px 10px 0px;
+    border-top: 2px solid #000;
+    text-align: center;
+}
+
+.btn-group button{
+    width: 70px;
+    height: 30px;
+}
+
+

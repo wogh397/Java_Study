@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체와 매개변수</title>   
+    <!--<form> 태그를 써서 만든후 ,
+      동의 체크박스 on,off에 따라 동의합니다 메세지 노출
+      제출을 누르면 
+      아래에 내용이 저장,표시되게끔 작성  
+      클릭하면 submitevent 발생,
+      폼안에 내용 제출 폼을대상으로 발생
+      방지해주는 함수
+      event.preventDefault();
+      -->
+  
+</head>
+
+
+<body>
+  <!-- form을 불러오려면 form에도 이름을 붙여줘야함. -->
+  <form name="f1">
+    <label>이름:</label>
+    <input type="text" id="name1" name="ok">
+    <input type="checkbox" id="check" name="ok" value="on">
+    <label>약관에 동의합니다.</label>
+    <input type="submit">
+  </form>
+  <p id="name1"></p>
+  <p id="check"></p>
+  
+  <script>
+    //작성내용을 form에 입력된 내용을 불러와서, 노출시켜
+    // 단, 체크박스 여부 도 함께 노출
+    // text 변수 , check 변수
+
+    //        ↓document.getElementsByName("ok") 배열 
+    let add = document.getElementsByName("ok");
+        document.f1.addEventListener("submit", (event)=>{
+          add.checked = true;
+          console.log(add[0].)
+        // 새로고침 방지
+        event.preventDefault();
+        
+        // 사용자가 입력한 데이터(이름) 가지고 오기 <---- 
+        // p 태그에 집어넣기 `이름: ${이름변수}` <------
+        // checked 속성 가져오기
+        // true false 판별하기 
+        // true이면 동의함     
+        // false이면 동의하지 않음
+        
+
+
+        document.getElementById("check").value;
+        document.getElementById("name1").value;
+        
+        //console.log(document.getElementById("name1").value)
+    });
+
+  </script>
+
+</body>
+</html>

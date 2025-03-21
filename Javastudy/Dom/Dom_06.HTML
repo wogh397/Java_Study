@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <input onclick="getChekbox()" id="myAdd1" type="checkbox" name="myAdd" value="1500">
+        <label for="myAdd1">추가채소 1500원</label><br>
+        
+        <input onclick="getChekbox()" id="myAdd2" type="checkbox" name="myAdd" value="1000">
+        <label for="myAdd2">추가채소 1000원</label><br>
+        
+        <input onclick="getChekbox()" id="myAdd3" type="checkbox" name="myAdd" value="500">
+        <label for="myAdd3">추가채소 500원</label><br>
+        
+        <p id="result"></p>    
+        <input type="button" value="reset" onclick="reset()"><hr>
+    <script>
+
+        // 초기화 시켜주는 버튼
+        // 함수 function = reset() 초기화 시켜주는 함수 추가
+        function reset(){
+
+            //getElementById 와 getElementsByName 차이
+         
+            //getElementById는 여러객체 중! 하나만 담는다
+            //getElementsByName는 여러객체를 담는다
+            const adds = document.getElementsByName("myAdd"); 
+
+            for ( let i = 0; i < adds.length; i++){
+         // for (let item of items){
+         //     item
+         //}     
+
+                if(adds[i].checked == true)
+                adds[i].checked = false
+             }
+
+           document.getElementById("result").innerHTML = `추가금액: 0원`;
+
+        }
+        
+        
+        
+        
+        
+        
+        // input 을 누르면 바로 추가금액에 합계표시
+        function getChekbox(id){
+            
+           
+            let sum = 0;
+            
+           
+            const adds = document.getElementsByName("myAdd");
+            
+           
+            for (let i = 0; i < adds.length; i++) {
+            
+                // 체크가 되면
+                if (adds[i].checked)
+            
+                // 체크가 되면, 정수로 변환 후, sum + 더하고 = sum에 입력
+                sum = sum + parseInt(adds[i].value);
+            }
+
+            document.getElementById("result").innerHTML = `추가금액: ${sum}원`;
+
+        }
+        
+    </script>
+</body>
+</html>

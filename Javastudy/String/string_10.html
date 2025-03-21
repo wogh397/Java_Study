@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript : string_05</title>
+
+    <style>
+        .todo-item{
+            background-color: bisque;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ddd; 
+            display: flex;
+            justify-content: space-between;
+        }
+        /* ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul > li {
+            background: #ebf4ff;
+            border: 1px solid #eee;
+            padding: 10px;
+            box-sizing: border-box;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+        <h1>할 일 목록</h1>
+  
+        <input id="todoInput" type="text" placeholder="할 일을 추가해주세요.">
+        <button onclick="todolist()">추가</button>
+  
+        <ul id="todolist">
+        <!-- todo 1,2,3,4,5 를 활용하여, 스크립트에 저장 -->
+            <li class="todo-item" id="todo1"></li>
+            <li class="todo-item" id="todo2"></li>
+            <li class="todo-item" id="todo3"></li>
+            <li class="todo-item" id="todo4"></li>
+            <li class="todo-item" id="todo5"></li>
+
+        </ul>
+    </div>
+
+    <script>
+        // [문제의 조건]
+        // 할 일을 추가하면 아래에 내용이 뜬다.
+        // 5개까지 추가하면 alert로 더 이상 추가할 수 없다는 문구 출력.
+
+
+        // #1
+        // -------------------------------------------------------------------
+        let count = 1;
+        let str = [];
+
+        function todolist() {
+            if(count >5){
+                alert("5개 이상은 입력할수 없는다.");
+            }else{                
+                const text = document.getElementById('todoInput');
+                str.push(text);
+
+                const li = document.getElementById('todo'+ count);
+                li.innerText = text.value;
+                text.value="";
+
+                count++;
+        }
+    }
+     
+
+        // -------------------------------------------------------------------
+        // [과정]
+        // 1. 내용
+
+
+        // [error]
+        // 1. 내용
+
+
+        
+        // [noti]
+        // - 내용
+
+
+
+
+        
+        // #2
+        // -------------------------------------------------------------------
+
+        // -------------------------------------------------------------------
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체와 매개변수</title>   
+    
+    <style>
+      body {overflow: hidden; }
+      #followMouse { transition: transform 1s linear;}
+    </style>
+  
+</head>
+
+
+<body>
+  <img id="followMouse" src = "../../카리나1.gif">
+  
+  
+  <script>
+    
+    // img(이미지)의 id=followMouse 를 getElementById로 불러옴
+    let image = document.getElementById("followMouse");
+      
+    //updateImage = onmousmove
+    //  
+      document.onmousemove = updateImage;
+
+    // function(함수)의  
+    function updateImage(event) {
+      
+      
+      const X = event.clientX;
+      
+      
+      const Y = event.clientY;
+      
+      
+      image.style.transform = `translate(${X}px, ${Y}px)`;
+    }
+
+
+  </script>
+
+</body>
+</html>

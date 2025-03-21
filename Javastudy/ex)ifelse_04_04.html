@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let distance = parseInt(prompt("이동거리를 입력하세요(km)"))
+        let hour = parseInt(prompt("탑승 시간을 입력하세요(0~23)"))        
+
+        let basefare = 3000;
+        let perKmFare = 0;
+
+        if(distance <= 10){
+            perKmFare = 500;
+        }else{
+            perKmFare = 700;
+        }
+
+        let totalFare = basefare + (distance * perKmFare);
+
+        if(hour >= 22 || hour <= 6){
+            totalFare = totalFare * 1.2;
+        }
+
+        document.write("최종 택시 요금: " + totalFare + "원");
+    
+        
+    </script>
+</body>
+</html>

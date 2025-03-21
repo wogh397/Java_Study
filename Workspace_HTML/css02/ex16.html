@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <style>
+            /* clearfix */
+            .clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+            .clearfix:after {clear: both;}
+            .box-gray{
+                width: 700px;
+                padding: 5px;
+                background-color: gray;
+
+            }
+
+            .box-red{
+                width: 700px;
+                background-color: red;
+            }
+            
+            .box-green{
+                background-color: green;
+                float: left;
+            }
+
+            .box-blue{
+                /*float글자크기만큼 줄어듬*/
+                background-color: blue;
+                float: left;
+            }
+        </style>
+    </head>
+ 
+    <body>
+        <div class="box-gray" cleafix:>
+
+
+           <div class="box-blue">파란박스</div>
+           <div class="box-green">초록박스</div>
+        </div>
+
+        <div class="box-red">
+            빨간박스
+        </div>
+        
+    </body>
+</html>

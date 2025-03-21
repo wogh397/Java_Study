@@ -1,0 +1,60 @@
+<!--
+1.타이블 사용자 목록 
+2.사용자 추가 버튼 누르면 이름,나이 추가 li를 사용하용
+3.디저블이 트루면 비활성화
+4.크리에이트엘리먼트 사용
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h2>사용자 목록</h2>
+  <!-- 
+  <button type="submit" id="list">사용자 추가</button>
+  -->
+  <ul id="ul"></ul>
+  <script>
+    // 배열안에 이름,나이 만들고, 버튼을 누를때마다 이름,나이 1명 씩 추가 
+    // 추가는 어떻게? 
+    // 배열 이름,나이 불러와서 추가.
+    // 추가하려면? Name 과 age 를 불러와야함
+    // 불러와서 어디다 넣을것이냐.
+    // 
+    // 마지막은 1명식 추가해야하니, 증감 연산자 사용?
+    // 
+    const users = [
+      { name: "장재호", age: "응애" },
+      { name: "장재호", age: "5세" },
+      { name: "장재호", age: "십세" },
+      { name: "장재호", age: "이십세" },
+      { name: "장재호", age: "삼십세" },
+
+    ];
+    //------------------------------------------해석-------------------------------------------- 
+    // count = 0; 으로 선언하고,
+    // 클릭이 이루어질때 Id가 "list"인 
+    let count = 0;
+    document.getElementById("list").addEventListener("click", (e) => {
+      const li = document.createElement("li")
+      li.innerText = (`${users[count].name} ${users[count].age}`);
+      document.getElementById("ul").appendChild(li);
+      count++;
+      if(count>users.length-1){
+        document.getElementById("list").disabled = true;
+      }
+    });
+
+
+
+  </script>
+</body>
+
+</html>

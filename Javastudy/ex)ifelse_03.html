@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let은 선언 , prompt 
+
+        // 프롬프트로 이름 키 몸무게 입력받기
+        let name = prompt("이름");
+        let kg = parseInt(prompt("몸무게를 입력하시오"));
+        let cm = parseInt(prompt("키를입력하시오"));
+        cm = cm/100;
+        cm = cm**2; 
+        let bmi = kg/cm;
+        alert(bmi);
+        // bmi 치수 출력하기
+        document.write(parseInt(bmi)); 
+        
+        // 10이상 멸 20미만
+        if (10 <= bmi && 20> bmi) {
+            document.write("멸");
+        // 20이상 현 30미만
+        }else if ( 20<= bmi && 30> bmi) {
+            document.write("현");
+        }else if ( 30 <= bmi && 40> bmi){
+            document.write("돼");
+        }else if (40 <= bmi){
+            document.write("사람임?");
+        }else {
+            document.write("해골임?");
+        }
+         
+    </script>
+</body>
+</html>

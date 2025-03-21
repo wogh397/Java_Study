@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function basefare(distance,hour) {    
+
+        let basefare = 3000;
+        let perKmFare = 0;
+
+        if (distance <= 10){
+            perKmFare = 500;   
+        }
+        if (distance >= 10){
+            perKmFare = 700;
+        }
+        basefare = basefare + (perKmFare*distance)
+
+        if (hour >= 22 || hour <= 6){
+            basefare = basefare * 1.2;
+        
+        }
+        return basefare;
+        }
+        while (true) {
+        let distance = parseInt(prompt("이동거리를 입력하세요(km)"));
+        let hour = parseInt(prompt("탑승 시간을 입력하세요(0~23)"));     
+        
+        if(distance < 1 || hour < 0 || hour > 23){
+            confirm("입력값이 잘못되었습니다");
+            continue;
+        }
+
+        let totalFare = basefare(distance,hour);
+        document.write("최종 택시 요금: " + totalFare + "원");
+        break;
+
+
+        }
+            
+
+    </script>
+</body>
+
+</html>

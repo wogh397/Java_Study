@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+    
+        <title>댕댕이</title>
+        <script>
+            function showDescription() {
+                const breed = document.getElementById('dog-breed').value;
+                const descriptionElement = document.getElementById('dog-description');
+                
+                const descriptions = {
+                    bulldog: "불독은 굵고 단단한 몸집을 가진 강아지로, 순하고 충성스럽습니다. 귀여운 외모로 사랑받고 있습니다.",
+                    poodle: "푸들은 똑똑하고 사교적인 성격을 가진 강아지로, 훈련이 잘 되고 활동적입니다.",
+                    labrador: "래브라도 리트리버는 친근하고 활발한 성격의 강아지로, 가족과 잘 어울리고 사회적입니다.",
+                    beagle: "비글은 활발하고 호기심 많은 성격을 가진 작은 크기의 사냥견입니다. 귀여운 외모가 특징입니다.",
+                    chihuahua: "치와와는 세상에서 가장 작은 품종 중 하나로, 사람을 좋아하며 충성스럽고 용감한 성격을 가지고 있습니다.",
+                    germanshepherd: "저먼 셰퍼드는 용감하고 똑똑한 성격으로, 주로 경찰견이나 군견으로 사용됩니다.",
+                    dalmatian: "달마시안은 특징적인 흰색 바탕에 검은 점이 있는 독특한 외모를 가진 강아지로, 에너지가 넘칩니다.",
+                    goldenretriever: "골든 리트리버는 사랑스럽고 친근한 성격을 가진 중형 강아지로, 가족과 잘 어울리고 훈련이 쉬운 품종입니다.",
+                    shiba: "시바견은 독립적이고 강한 성격을 가진 일본 토종견으로, 깔끔하고 용감한 성격이 특징입니다.",
+                    pomeranian: "포메라니안은 작은 크기와 풍성한 털로 유명한 강아지로, 매우 활발하고 애교가 많습니다.",
+                    husky: "허스키는 강한 체력과 용기를 가진 견종으로, 아름다운 파란 눈이 특징이며 추운 날씨에서 잘 살아갑니다.",
+                    rottweiler: "로트와일러는 강한 근육을 가진 대형견으로, 충성스럽고 보호적인 성격을 지니고 있습니다.",
+                    boxer: "복서는 활발하고 유머러스한 성격의 강아지로, 사람을 좋아하며 가족과 잘 지냅니다.",
+                    cocker: "코커 스패니얼은 활발하고 사랑스러운 성격을 가진 중형견으로, 긴 귀가 특징입니다.",
+                    bostonterrier: "보스턴 테리어는 작고 똑똑한 강아지로, 활발하고 사람과 잘 어울립니다.",
+                    shihzu: "시추는 작고 귀여운 외모를 가진 강아지로, 사랑스럽고 조용한 성격을 지니고 있습니다.",
+                    maltese: "말티즈는 작은 크기와 긴 흰 털이 특징인 강아지로, 온순하고 애교가 많은 성격입니다.",
+                    doberman: "도베르만은 강하고 충성스러운 성격의 대형견으로, 보호견으로 자주 사용됩니다.",
+                    samoyed: "사모예드는 하얀 털과 웃는 표정이 특징인 강아지로, 활발하고 친근한 성격을 지니고 있습니다.",
+                    bichon: "비숑 프리제는 작고 귀여운 외모를 가진 강아지로, 활발하고 애교가 많습니다.",
+                    pug: "퍼그는 작은 체구와 특징적인 주름이 있는 얼굴이 특징인 강아지로, 사람을 좋아하고 애교가 많습니다.",
+                    chowchow: "차우차우는 독립적이고 고집 센 성격을 가진 강아지로, 두꺼운 털과 파란 혀가 특징입니다.",
+                    bernese: "버니즈 마운틴 독은 대형견으로, 온순하고 가족과 잘 어울리는 성격을 지니고 있습니다.",
+                    akita: "아키타는 대형견으로, 독립적이고 충성스럽고 보호적인 성격을 가지고 있습니다.",
+                    greatdane: "그레이트댄은 매우 큰 체격을 자랑하는 강아지로, 온순하고 상냥한 성격을 지니고 있습니다.",
+                    schnauzer: "슈나우저는 특징적인 수염과 귀를 가진 중형 강아지로, 똑똑하고 충성스러운 성격입니다.",
+                    frenchbulldog: "프렌치 불독은 작고 귀여운 외모와 독특한 얼굴을 가진 강아지로, 사람을 좋아하고 애교가 많습니다.",
+                    bordercollie: "보더콜리는 뛰어난 지능과 빠른 반사신경을 자랑하는 강아지로, 작업견으로 자주 사용됩니다.",
+                    pekingese: "페키니즈는 작은 크기와 풍성한 털을 가진 강아지로, 우아하고 고귀한 성격을 지니고 있습니다.",
+                    terrier: "테리어는 다양한 종류가 있는 견종으로, 활발하고 용감한 성격을 지니고 있습니다.",
+                    eskimodog: "에스키모견은 튼튼하고 용감한 성격을 가진 강아지로, 추운 기후에서 잘 살 수 있습니다.",
+                    whippet: "휘핏은 날렵하고 빠른 성격을 가진 강아지로, 주로 경주견으로 사용됩니다.",
+                    italiangreyhound: "이탈리안 그레이하운드는 세련된 외모와 빠른 속도를 자랑하는 강아지입니다."
+                };
+    
+                descriptionElement.textContent = descriptions[breed] || "강아지 품종을 선택하세요.";
+            }
+        </script>
+    </head>
+    
+    <body>
+        댕댕이 개인정보 
+            <br><br>
+            이름:
+            <input type="text" placeholder="이름을 입력하세요">
+            
+            <hr>
+            나이:
+            <input type="text" style="width: 50px;">
+            
+            <hr>
+            무게:
+            <input type="text" style="width: 50px;"> kg
+            
+            <hr>
+            성별:
+            <label for="male">수컷</label>
+            <input id="male" type="radio" value="male">
+            <label for="female">암컷</label>
+            <input id="female" type="radio" value="female">
+
+            <hr>
+            <label for="small">소형견</label>
+            <input id="small" type="radio" name="size" value="small" checked="checked">
+
+            <label for="middle">중형견</label>
+            <input id="middle" type="radio" name="size" value="middle">
+
+            <label for="large">대형견</label>
+            <input id="large" type="radio" name="size" value="large">
+            
+            <hr>
+            성격:
+            <input type="text">
+            
+            <hr>
+            <label for="dog-breed">견종:</label>
+                <select id="dog-breed" name="dog-breed">
+                    <option>견종</option>
+                    <option value="bulldog">불독</option>
+                    <option value="poodle">푸들</option>
+                    <option value="labrador">래브라도 리트리버</option>
+                    <option value="beagle">비글</option>
+                    <option value="chihuahua">치와와</option>
+                    <option value="germanshepherd">저먼 셰퍼드</option>
+                    <option value="dalmatian">달마시안</option>
+                    <option value="goldenretriever">골든 리트리버</option>
+                    <option value="shiba">시바견</option>
+                    <option value="pomeranian">포메라니안</option>
+                    <option value="husky">허스키</option>
+                    <option value="rottweiler">로트와일러</option>
+                    <option value="boxer">복서</option>
+                    <option value="cocker">코커 스패니얼</option>
+                    <option value="bostonterrier">보스턴 테리어</option>
+                    <option value="shihzu">시추</option>
+                    <option value="maltese">말티즈</option>
+                    <option value="doberman">도베르만</option>
+                    <option value="samoyed">사모예드</option>
+                    <option value="bichon">비숑 프리제</option>
+                    <option value="pug">퍼그</option>
+                    <option value="chowchow">차우차우</option>
+                    <option value="bernese">버니즈 마운틴 독</option>
+                    <option value="akita">아키타</option>
+                    <option value="greatdane">그레이트댄</option>
+                    <option value="schnauzer">슈나우저</option>
+                    <option value="frenchbulldog">프렌치 불독</option>
+                    <option value="bordercollie">보더콜리</option>
+                    <option value="pekingese">페키니즈</option>
+                    <option value="chihuahua">치와와</option>
+                    <option value="terrier">테리어</option>
+                    <option value="eskimodog">에스키모견</option>
+                    <option value="whippet">휘핏</option>
+                    <option value="italiangreyhound">이탈리안 그레이하운드</option>
+                </select>
+            <hr>
+            특징
+                <textarea></textarea>
+            <hr>
+            <input type="button" value="전송">
+
+            <hr>
+
+
+    </body>
+    </html>

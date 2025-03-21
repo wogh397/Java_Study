@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name: "Jang",
+            age: 35,
+            intro: function(){
+                document.write("My name: " + this.name + " , age:" + this.age + "<br>");
+            }
+        }
+        
+        person.intro();
+        person.age = 30;
+        person.intro();
+        
+        function changename(){
+            person.name = "klim";
+        }
+        
+        
+        person.name = "kim"
+        changename();
+        person.intro();
+
+
+
+
+
+    </script>
+</body>
+</html>

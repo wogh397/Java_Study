@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        text-align: center;
+    }
+
+    #container:hover > #rotate {
+        display: inline-block;
+    }
+
+    #rotate {
+        display: none;
+        font-size: 40px;
+        color: blue;
+    }
+
+    div {
+        width: 100%;
+        height: 200px;
+    }
+</style>
+</head>
+<body style="text-align: center">
+    <h1 id="rotate">Programming</h1>
+
+    <script>
+        
+        
+        const rotate = document.getElementById("rotate");
+        
+        
+        function rotateString(){
+            
+            
+            const text = rotate.textContent;
+            
+            // 첫글자 index 0번     
+            const firstChar = text[0];
+            
+            
+            const rotatedText = text.slice(1) + firstChar;
+            
+            
+            rotate.textContent = rotatedText;
+        }
+        // 함수의 정의 , (500) 500ms 시간 
+        setInterval(rotateString, 500); //500ms 마다 문자열 회전
+    </script>
+</body>
+</html>

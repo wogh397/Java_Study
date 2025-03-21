@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="myAdd" value="1500">추가채소 1500원<br>
+    <input type="checkbox" name="myAdd" value="1000">추가채소 1000원<br>
+    <input type="checkbox" name="myAdd" value="500">추가채소 500원<br>
+    <input type="button" value="add" onclick="getChekbox()"><hr>
+    <p id="result"></p>    
+    <script>
+        function getChekbox(){
+            
+            // sum은 0 으로 지정
+            let sum = 0;
+            
+            // getElementsByName= myAdd를 가져와서 adds 에 삽입 
+            const adds = document.getElementsByName("myAdd");
+            
+            // for 반복 i는 0 기준, adds(myAdd)가 i보다 크면 i는 증가
+            for (let i = 0; i < adds.length; i++) {
+            
+            //adds가 
+                if (adds[i].checked)
+            
+            // add[i]는 선택된 value: 1500,1000,500 숫자로 더하여, sum에 삽입 
+                sum = sum + parseInt(adds[i].value);
+            }
+            // 
+            document.getElementById("result").innerHTML = `추가금액: ${sum}원`;
+        }
+    </script>
+</body>
+</html>

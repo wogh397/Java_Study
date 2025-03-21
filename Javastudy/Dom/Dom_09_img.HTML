@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        text-align: center;
+    }
+
+    #container:hover > #rotate {
+        display: inline-block;
+    }
+
+    #rotate {
+        display: none;
+        font-size: 40px;
+        color: blue;
+    }
+
+    div {
+        width: 100%;
+        height: 200px;
+    }
+</style>
+</head>
+<body style="text-align: center">
+    <img id ="image" src="../../카리나1.gif"><br>
+    <input type="button" value="Change" onclick="changeImage()">
+    <script>
+        let toggle = 1;
+
+        function changeImage(){
+
+
+            if (++toggle % 2 == 0)
+            document.getElementById("image").src = "../../카리나1.gif";
+
+
+            else
+            document.getElementById("image").src = "../../카리나2.gif";
+        }
+    </script>
+</body>
+</html>

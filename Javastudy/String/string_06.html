@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript : string_02</title>
+
+    <style>
+        textarea {
+            width: 500px;
+            height: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <div>
+        <h1>문자열 뒤집기</h1>
+
+        <textarea id="textInput" placeholder="여기에 문잘을 입력하세요"></textarea><br>
+        
+        <input id="wordInput" type="text" placeholder="찾을 단어를 입력하세요">
+        <button onclick="countword()">뒤집기</button>
+
+        <h2>결과:</h2>
+        <p id="result"></p>
+    </div>
+
+    <script>
+    function turnword() {
+      // ID 값이 find인 요소인 값을 찾아온다. 
+      const text = document.getElementById('textInput').value.toLowerCase;
+      
+      // Id 값이 textarea인 요소인 값을 찾아온다.
+      const word = document.getElementById('wordInput').value.toLowerCase;
+      
+      //output 에 입력된 값을 스플릿을 한다. 
+      
+      const parts = text.split(word);
+      
+      const arr = text.split(word)
+
+      const result = document.getElementById("result");
+      result.innerText = "단어 출현 횟수 : " + count;
+      
+      
+      
+
+
+
+
+
+
+    }
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+        // [문제의 조건]
+        // textarea에 입력한 문장 중에서 찾는 단어가 몇 개 있는지 카운트. 
+
+
+        // #1
+        // -------------------------------------------------------------------
+
+     
+        // -------------------------------------------------------------------
+        // [과정]
+        // 1. 내용
+
+        
+        // [noti]
+        // - ㅠ..................진짜 절대 모르겠음
+
+
+
+
+        
+        // #2
+        // -------------------------------------------------------------------
+
+
+        // -------------------------------------------------------------------
+        // [과정]
+        // 1. 내용
+
+
+        // [error]
+        // 1. 내용
+
+        
+        // [noti]
+        // - 내용
+    </script>
+  </body>
+</html>

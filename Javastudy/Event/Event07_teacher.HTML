@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체와 매개변수</title>   
+    <!--<form> 태그를 써서 만든후 ,
+      동의 체크박스 on,off에 따라 동의합니다 메세지 노출
+      제출을 누르면 
+      아래에 내용이 저장,표시되게끔 작성  
+      클릭하면 submitevent 발생,
+      폼안에 내용 제출 폼을대상으로 발생
+      방지해주는 함수
+      event.preventDefault();
+      -->
+  
+</head>
+
+
+<body>
+  <form id="myForm" name="myFormName">
+    <input type ="text" id ="name" name ="userName">
+
+    <input type="checkbox" id="agree" name="checkagree">
+    <label for="agree">약관에 동의합니다.</label>
+
+    <input type="submit" value="제출">
+  </form>
+  <!--  -->
+  <!--  -->
+  <p id="showname"></p>
+  <p id="showagree"></p>
+  
+  
+  <script>
+    //
+    //
+    document.getElementById("myForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+    
+    //방법1,
+    let name = document.getElementById("name").value;
+    
+    //방법 2,
+    //let name = document.myFormName.userName.value;
+    
+    //방법 3,
+    //let name = e.target.userName.value;
+    let agree = e.target.checkAgree.checked;
+
+
+    document.getElementById("showname").innerText="이름: "+ name;
+    document.getElementById("showagree").innerText= "약관 동의" + 
+                            //삼항연산자 agree ? 어그리가 무엇이냐
+                            // 동의함 :(또는) 동의하지 않음      
+                                (agree ? "동의함" : "동의하지 않음");
+
+
+
+
+
+    })
+
+  </script>
+
+</body>
+</html>

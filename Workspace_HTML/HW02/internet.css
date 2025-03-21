@@ -1,0 +1,18 @@
+            .txt-l{
+                text-align: left;
+            }
+            .txt-r{
+                text-align: right;
+            }
+            .txt-c{
+                text-align:  center;
+            }
+
+            p{
+                text-indent: 30px;
+                line-height: 30px;
+            }
+
+            ul>li, ol>li{
+                list-style-type: none;
+            }

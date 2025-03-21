@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <hr>
+    <h2>for,dan</h2>
+
+    <script>
+
+        // let 선언,조건
+        let dan,num;
+        
+        //  for 반복문 let으로 dan,num 선언
+        //  dan 은 2  / < 10보다 큰 2~9까지 실행 / dan ++ 증감 
+        for (dan = 2; dan < 10; dan++){ // 중괄호 안에 for 문이 한번 더 있기에 다중 for 반복
+            document.write(dan + "단: ");
+        
+        // num은 1 / num을 10번 실행 / num ++ 증감
+            for (num = 1; num < 10; num++){
+                document.write(dan + "X" + num + "=" + dan * num + " ");
+            }
+        document.write("<hr>");
+        }
+    </script>
+</body>
+</html>

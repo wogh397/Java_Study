@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이더</title>
+</head>
+<body style="width: 300px; height: 300px; text-align: center">
+    
+    <!--  -->
+    <img id = "image" src="../../media(2)/africa.jpg"> 
+
+
+
+
+    
+    <!-- 이전 ,다음 버튼으로 사진 순서 변경 -->
+    <input type ="button" value="next" onclick="nextImage()">
+    <input type ="button" value="back" onclick="backImage()">
+
+    
+
+    
+    
+    <script>
+
+        let index = 0;
+        let img = ["../../media(2)/africa.jpg","../../media(2)/africa1.jpg","../../media(2)/africa2.jpg","../../media (2)/africa3.jpg"]
+
+        function nextImage(){
+            index=(index + 1) % 4
+            document.getElementById("image").src = img[index]
+        }
+
+        function backImage(){
+            index=(index + 4) % 4
+            document.getElementById("image").src = img[index]
+
+        }
+
+    
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

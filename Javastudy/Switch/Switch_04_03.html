@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 스코어 변수선언 초기값으로 사용자에게 프롬프트 함수를 사용해서 입력을 받고 정수값으로 저장한다.
+         
+        let select = parseInt(prompt("연산을 선택하세요 1:덧셈, 2:뺄셈, 3:곱셈, 4:나눗셈"));
+
+        // ~ 1 부터 4까지 ~ 
+        if(select < 1 || select > 4){
+            document.write("잘못입력했습니다");
+        }else{
+            let num1 = parseInt(prompt("첫번째 숫자를 입력하세요"));
+            let num2 = parseInt(prompt("두번째 숫자를 입력하세요"));
+            let result = 0;
+        
+            switch(select){
+            
+                case 1:
+                result = num1 + num2;
+                break;
+
+                case 2:
+                result = num1 - num2;
+                break;
+
+                case 3:
+                result = num1 * num2;
+                break;
+
+            default:
+                result = num1 / num2;
+            
+        }
+            document.write("연산의 결과 :", result);
+        }
+        
+
+
+        
+    
+        
+    </script>
+</body>
+</html>

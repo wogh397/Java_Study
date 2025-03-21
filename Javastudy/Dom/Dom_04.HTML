@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="myCheckbox">다음 단계 진행 확인!<br>
+    <input type="button" value="process" onclick="getChekbox()"><hr>
+    <p id="result"></p>    
+    <script>
+        function getChekbox(){
+            if (document.getElementById("myCheckbox").checked == true)
+                document.getElementById("result").innerText="작업을 진행한다?";
+            else
+                document.getElementById("result").innerText="너가 중단 함";
+        }
+    </script>
+</body>
+</html>

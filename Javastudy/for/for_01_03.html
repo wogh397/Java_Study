@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let count = 0;
+        let primeNuberCount = 0;
+
+        for(let i=2; i<=100; i++){
+            let flag = false;
+
+            for(let j=2; j<=(i/2); j++){
+                if(i%j === 0){
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag){
+                primeNuberCount++;
+                document.write(i + " ");
+            }
+
+        }
+//--------------------------------------------------------------------------------------------
+        // let count = 0;                      // count는 0 이다.
+        // let primeNuberCount = 0;            // primeNumbercount는 0이다
+
+        // for (let i=2; i<=100; i++){         // i는 2, i가 100될때까지 1씩 증가하며 반복     
+            
+            
+        //     for(let j=2; j<=(i/2); j++){    // j는 2, j가 i와 같을때가지 1씩 증가하며 반복
+        
+        //         if(i % j === 0)             // i 나머지 j 는 0이다
+
+        //         count++;                    // count 는 0 이지만, 1씩 증가
+        //     }
+
+        //     if(count === 0){                // 
+        //         primeNuberCount++;
+        //         document.write(i + " ");
+        //     } 
+                
+        // }
+        // document.write("2~100까지의 소수의 개수 : " + primeNuberCount);
+
+//-------------------------------------------------------------------------------------------
+
+        // for (let i=2; i<=100; i++){
+            
+        //     document.write(i + " : ");
+            
+        //     for(let j=2; j<=(i/2); j++){
+                
+        //     if(i % j === 0)
+
+        //         document.write(j+ " ");
+        //     }
+        //     document.write("<br>");
+        // }
+//------------------------------------------------------------------------------------------
+
+        // for (let i=5; i>=5; i--){
+            
+        //     for(let j=1; j<=i; j++){
+        //         document.write("*" + " ");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // for (let i=1; i <= 5; i++){
+
+
+        //     for(let j=1; j<=i; j++){
+
+
+        //         document.write(j + " ")
+        //     }
+        //     document.write("<br>");
+        // }
+
+    </script>
+</body>
+</html>

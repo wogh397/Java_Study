@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <input onclick="getChekbox(myAdd1)" id="myAdd1" type="checkbox" name="myAdd" value="1500">
+        <label for="myAdd1">추가채소 1500원</label><br>
+        
+        <input onclick="getChekbox(myAdd2)" id="myAdd2" type="checkbox" name="myAdd" value="1000">
+        <label for="myAdd2">추가채소 1000원</label><br>
+        
+        <input onclick="getChekbox(myAdd3)" id="myAdd3" type="checkbox" name="myAdd" value="500">
+        <label for="myAdd3">추가채소 500원</label><br>
+        
+        <p id="result"></p>    
+        <input type="button" value="reset" onclick="reset()"><hr>
+    <script>        
+        // input 을 누르면 바로 추가금액에 합계표시
+        let sum = 0;
+        function getChekbox(id){
+                
+           
+            const adds = document.getElementById(id);
+            
+            if(adds.checked){
+                sum = sum + parseInt(adds.value);
+        
+            }else{
+                sum = sum - parseInt(adds.value);
+            }
+        
+        }
+
+            document.getElementById("result").innerHTML = `추가금액: ${sum}원`;
+
+        
+
+        
+    </script>
+</body>
+</html>

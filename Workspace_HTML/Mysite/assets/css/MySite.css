@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+
+.clearfix:before, .clearfix:after {display: block; content: ""; line-height: 0;}
+.clearfix:after {clear: both;}
+
+/* -----------레이아웃----------------------- */
+#wrap{
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#wrap header{
+    padding: 10px 0px 10px 0px;
+    border-bottom: 2px solid gray;
+}
+
+#wrap nav{
+    background-color: white;
+    border-bottom: 2px solid gray;
+}
+/* 1단 */
+#wrap #content{
+    padding: 20px;
+    background-color: white;
+}
+/* 2단 */
+#wrap #content2{
+    padding: 20px 0px 20px 0px;
+    background-color: white;
+}
+#wrap #content2 aside{
+    background-color: white;
+    float: left;
+    width: 180px;
+    margin-right: 10px;
+}
+#wrap #content2 main{
+    float: left;
+    width: 800px;
+}
+
+#wrap footer{
+    background-color: rgb(179, 177, 177);
+    
+}
+
+/* ----header---- */
+header h1{
+    float: left;
+    font-size: 35px;
+    color: #79b03b;
+    font-weight: 900;
+}   
+
+header ul{
+    padding: 10px;
+    float: right;
+}
+
+header ul>li{
+    float: left;
+    margin-left: 10px;
+    padding: 3px 5px 3px 5px;
+    border-radius: 3px;
+    border: 1px solid #c0c0c0;
+    font-size: 10px;
+}
+/* ----header[     END       ]---- */
+
+/* ----nav---- */
+nav ul{
+    padding: 10px 0px 10px 0px;
+}
+nav ul>li{
+    float: left;
+    width: 250px;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+/* ----nav[     END       ]---- */
+
+/* ----footer---- */
+footer p{
+    text-align: center;
+}
+/* ----footer[     END       ]---- */
+
+/* ----index 페이지---- */
+#content #Karina{
+    float: left;
+    width: 300px;
+    margin-right: 20px;
+    height: 300px;
+}
+#content #greeting-box{
+    float: left;
+
+}
+
+#content #greeting-box .greeting{
+    font-weight: bold;
+    font-size: 20px;
+}
+/* ----index 페이지[     END       ]---- */
+
+/* -----------------------aside------------------------ */
+#content2 aside h2{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 0px 15px 0px;
+    background-color: bisque;
+
+    text-align: center;
+}
+#content2 aside ul>li{
+    margin-top: 5px;
+    padding: 8px 10px 8px 10px;
+    border:  1px solid black;
+    background-color: white;
+}
+/* -----------------------aside[     END       ]------------------------ */    
+
+/*--------------------------Main---------------------------  */
+#content2 main .path-box{
+    padding: 20px 0px 7px 0px;
+    border-bottom: 1px solid black;
+
+}
+
+#content2 main .path-box h3{
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#content2 main .path-box ol{
+    float: right;
+}
+
+#content2 main .path-box ol>li{
+    float: left;
+}
+
+#content2 main .path-box ol>li::after{
+    content: ">";
+}
+
+#content2 main .path-box ol>li:last-child:after{
+    content: "";
+}
+
+#content2 main table{
+    width: 810px;
+    text-align: center;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .product-container { display: flex; gap: 20px}
+    .product-card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 150px;
+        text-align: center;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <h2>제품 목록</h2>
+    
+    <div class="product-container" id="productContainer"></div>
+
+    <script>
+
+       const products = [
+        { name : "노트북", price: 1500000, image: "../../KakaoTalk_20250321_153559233.webp" },
+        { name : "스마트폰", price: 800000, image: "../../KakaoTalk_20250321_153559630.webp"},
+        { name : "태블릿", price: 600000, image: "../../KakaoTalk_20250321_153600063.webp"}
+       ]; 
+       
+       //
+       const container = document.getElementById("productContainer");
+       
+       //
+            products.forEach((product)=>{
+       
+       const card = document.createElement("div");
+            
+            // 머선말 ? 
+            card.className = "product-card";
+            
+            
+            card.innerHTML = `
+
+            
+            
+                <img src="${product.image}" width="100px" height="100px">
+                <h3>${product.name}</h3>
+                <p>가격: ${product.price.toLocaleString()}원</p>
+            `;
+            container.appendChild(card);     
+       })
+       
+      
+       
+
+
+    </script>
+</body>
+</html>
