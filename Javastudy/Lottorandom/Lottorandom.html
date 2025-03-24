@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또 번호 추첨기기</title>
+ </head>
+ <body>
+    <!--로또 번호 추첨 생성기 과제 -->
+    <!-- 오답 노트 (오답노트)
+    1. 입력 테이프="버튼" 테이프 알파벳 오타;;;;
+    2.
+    -->
+    <h2>로또 번호 생성기</h2>
+    <button id="create">로또 번호 생성</button>
+    <p id="lottonum"></p>
+
+    <script>
+     //0. math.floor(Math.random)? 이거 써야하는데 어따 쓰지?
+     //1. Id를 불러와 클릭(행동) 동작할때 작동
+     document.getElementById('create').addEventListener('click', () => {
+     //2. 빈배열 만들기 : const , let 둘중 뭐로 만들지 고민함
+     // createnum = [];
+     number = [];
+
+     //3. 누를때마다 작동? for(반복문?) 써야하나? - for(let of ) 사용가능?
+     // for(let lo for ) 사용가능? 근데 어찌작성해야 하는지 모름
+     // 차이점  = 채팅 중에.GPT 질문
+     // 반복횟수가 정해져있지않으면 while문이 적당
+     // 반복횟수가 정해져있으면 for문이 적당
+
+       if (numbers.legth < 6) { 
+     // 배열 길이? 6까지만 실행
+     //3. 1번~46번 숫자를 랜덤하게 추출?
+        const lottonum = Math.floor(Math.random() * 45) + 1;
+     //
+       if (!numbers.includes(Lotto)) {
+            numbers.push(Lotto);
+     }
+     }
+        numbers.sort((a, b) => a - b);
+        document.getElementById('lotto').innerText = number.join(  "")
+     });
+    </script>
+</body>
+</html>

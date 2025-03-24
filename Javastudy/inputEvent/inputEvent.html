@@ -8,7 +8,7 @@
 <body>
     <!-- 이름 입력입력 칸에 이름을 입력시,    -->
     <h2> 전수 목록</h2>
-    <input type = "text" id="playername">
+    <input type = "text" id="playername" >
     <ul id="playerlist"></ul>
 
     <script>
@@ -47,7 +47,7 @@
         
         
         // 플레이어네임 입력 작동시,  
-        document.getElementById("playername").addEventListener("input", ()=>{
+        document.getElementById("playername").addEventListener("input", (e)=>{
             // 아이디가 ( ) 인 태그의 value 속성 값을 ( )에 저장
             const str = document.getElementById("playername").value;
             // 기존에 있는 ul태그의 자식 내용을 제거

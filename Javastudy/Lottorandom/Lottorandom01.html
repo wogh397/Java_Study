@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+CSS    
+
+
+
+
+-->
+
+
+
+</head>
+<body>
+   <h1>로또 번호 생성기</h1>
+   <button id="lotto">로또 번호 생성</button> 
+    <div id="lottoNumbers"></div>
+    <script>
+
+        document.getElementById("lotto").addEventListener("click", (e)=>{
+
+//-----------------------------------------------------------------------------------------
+        // !!왜 for of 를 안 썼을까?
+        // !! 비어있고 한개식 집어넣어야하기에 사용 불가
+        // !!이유 : 배열 안에 들어있는 경우 for(  of  ) 를 사용가능
+        // let numbers=[];
+        // for(let i=1; i<=45; i++){
+        //     numbers.push(i);
+        // }
+
+        // let lotto = [];
+        // for(let i=0; i<6; i++){
+        //     const randomIndex = (Math.random() * numbers.length); // *46을 안쓰고 numbers.length 를 사용하는 이유는 ? 
+        //     lotto.push(numbers[randomIndex]); // push는 밀어넣어준다 어디에?
+        //     number.filter((n)=>n !== numbers[randomIndex]); //?
+        // }
+//-----------------------------------------------------------------------------------------
+        // while을 사용한 이유 : 
+        let lotto = [];
+        while(true){
+        
+        // 
+            let number=Math.floor(Math.random() * 45) +1;
+            
+        //  if(lotto.find((n)=>n === number)) n=> === number 는 반복문이다.  
+            if(lotto.find((n)=>n === number)){
+                continue;
+            }
+        
+        //
+            lotto.push(number);
+            if(lotto.length === 6){
+                break;
+            }
+
+        }
+
+        lotto.sort((a,b)=> a-b); // sort는 정렬, a-b 는 오름차순, b-a는 내림차순
+        const lottoNumbersDiv = document.getElementById("lottoNumbers");
+        lottoNumbersDiv.innerHTML = lotto.map((num)=>`<span class="lotto-number">${num}</span>`) //map이란?
+            .join("") // join으로 붙이기   
+        });
+        
+    </script>
+
+
+
+
+</body>
+</html>
