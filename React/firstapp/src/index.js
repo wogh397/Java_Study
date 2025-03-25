@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App_aespa';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-  {/* <app />란? 컴퍼넌트 함수를 만들어낸다 */}
-  {/* 컴퍼넌트란? 태그를 만들어서 함수를 만들어서 리턴해주는것 */}
+  {/* <App />란? 첫글자는 대문자로 해야함. 컴퍼넌트 함수를 만들어낸다 */}
+  {/* 컴퍼넌트란? html 태그를 만들어서 함수를 만들어서 리턴해주는것 */}
 
     <App />
 

@@ -4,9 +4,8 @@ export default function Nav(props){ // {  topics : [ 배열이 들어옴 ], onCh
     let t = props.topics[i]; // t는 props.topics[i] 
     // t 는 객체 = 객체 이름은 사용자가 임의로 정할수있음
     //  태그안에 li 안에 객체를 여러개 만들어서 넣어줄수 있다.
-    lis.push(<li key={t.id}><a id={t.id} href={'/read/'+t.id} onClick={(e)=>{
-      
-      e.preventDefault(); // onClick={(e) 해당 기능 정지
+    lis.push(<li key={t.id}><a id={t.id} href={'https://namu.wiki/w/'+t.id} onClick={(e)=>{
+      // onClick={(e) 해당 기능 정지
       props.onChangeMode(e.target.id); 
     }}>{t.title}</a></li>);
     // li객체 안에 a 객체로 속성,함수 를 하나에 객체로 li로 push 빈배열에 넣음

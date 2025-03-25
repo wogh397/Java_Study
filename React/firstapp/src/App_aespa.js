@@ -1,28 +1,17 @@
-import Header from "./Header"; // import란 ? JavaScript에서는 다른 파일에서 함수나 클래스를 가져올 때 import를 사용해.
-import Nav from "./Nav";
+import Header from "./Header_aespa"; // import란 ? JavaScript에서는 다른 파일에서 함수나 클래스를 가져올 때 import를 사용해.
+import Nav from "./Nav_aespa";
 import Article from "./Article";
 import Create from "./Create";
-
 import { useState } from "react";
 
 function App() { 
-  // 아래 [배열 0 , 배열1] = 배열 0은 변수 , 배열 1는 함수
-  const [ mode, setMode ] = useState("WELCOME");                                  //
-// mode가 변수 이고, setMode는 함수()
-// useState가 [Mode]에 대입
-  
+  const [ mode, setMode ] = useState("WELCOME"); 
   const [ id,setId ] = useState(0); 
-// useState(0) 
-  
   const [ topics, setTopics ] = useState([
-    
-    
-//아래는 객체이다. id로 객체를 만듬 
-    {id:1, title:"html", body:"html is ...."},
-  
-    {id:2, title:"css", body:"css is ...."},
-  
-    {id:3, title:"javascript", body:"javascript is ...."},
+    {id:1, title:"카리나", body:""},
+    {id:2, title:"윈터", body:"css is ...."},
+    {id:3, title:"지젤", body:"javascript is ...."},
+    {id:4, title:"닝닝", body:"javascript is ...."},
   ]);
 
   let content = null;
@@ -43,32 +32,23 @@ function App() {
       content = <Create onCreate={(_title, _body)=>{
         let newTopic = { id: topics.length + 1, title: _title, body: _body };
         let newTopics = [...topics, newTopic]; 
-        // 1. 위 rest 연산자 [...topics]란 newTopics 배열안에 뿌려넣는다
-        // 2. [...topics, newTopics]란 newTopics,newTopic을 뿌려넣는다 
+
         setTopics(newTopics);
         setId(newTopic.id);
         setMode("READ");
       }} ></Create>
-        // newTopics.push(newTopic)
-        // for(let t of topics){
-        //   newTopics.push(t);
-        // }
+
     }
 
-  return ( // <Nav topics={topics} onChangeMode={(id)=>{ alert(id);}}></Nav>
-           //       ↑ 속성 = ↑값  둘다 본인의 임의로 이름을 정하여 작성가능
-           // onChangeMode={(id)=>{ alert(id);}}>
-           //        ↑                         
+  return ( // <Nav topics={topics} onChangeMode={(id)=>{ alert(id);}}></Nav>                     
     <> 
-    {/*                     onChangeMode라는 함수안에*/}
-      <Header title="REACT" onChangeMode={()=>{
+      <Header title="aespa" onChangeMode={()=>{
         setMode("WELCOME");
       }}></Header>  
-      {/* topics 라는  */}
       <Nav topics={topics} onChangeMode={(_id)=>{
         setId(_id);
         setMode("READ"); 
-        // Mode가 READ로 바뀜
+
       }}></Nav> 
       {content}
        
