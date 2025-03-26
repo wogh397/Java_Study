@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App'; // App가 실행 리액트 실행하여 보여주는 창
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-  {/* <App />란? 첫글자는 대문자로 해야함. 컴퍼넌트 함수를 만들어낸다 */}
-  {/* 컴퍼넌트란? html 태그를 만들어서 함수를 만들어서 리턴해주는것 */}
-
-    <App />
-
+{/* Index는 App 구동에 필요 */}
+    <App /> 
   </React.StrictMode>
 );
 
