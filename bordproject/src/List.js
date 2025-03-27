@@ -10,8 +10,12 @@ export default function List(props) {
     // <></> 빈태그로 하나로 묶어주면 가능    
     // <a></a> a태그를 만들어 
         <>
-        <a key={l.id} href="/">
+        <a  id={l.id}key={l.id} href="/" onClick={(e)=>{
+          e.preventDefault();
+          props.onSelect("READ", (e.target.id))
+        }}>
            {l.title}(작성자:{l.writer})
+           {/* e.postArr */}
         </a>
         <hr></hr></>;
         //빈배열 PostArr에 item이라는 변수를 넣는다

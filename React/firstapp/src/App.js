@@ -8,8 +8,8 @@ import Update from "./Update";
 
 function App() { // State 란 상태값이 저장되는 변수
                  // 
-  // 아래 [배열 0 , 배열1] = 배열 0은 변수 , 배열 1는 함수
-  const [ mode, setMode ] = useState("WELCOME");                                  //
+// 아래 [배열 0 , 배열1] = 배열 0은 변수 , 배열 1는 함수
+  const [ mode, setMode ] = useState("WELCOME");  //
 // mode가 변수 이고, setMode는 함수()
 
 // useState가 [Mode]에 대입
@@ -21,14 +21,14 @@ function App() { // State 란 상태값이 저장되는 변수
   const [ topics, setTopics ] = useState([
   
   
-  //아래는 객체이다. id로 객체를 만듬 
+  //아래는 객체 State 컴포넌트 이다. id로 객체를 만듬 
   {id:1, title:"html", body:"html is ...."},
   
   {id:2, title:"css", body:"css is ...."},
   
   {id:3, title:"javascript", body:"javascript is ...."},
   ]);
-  const [ nextId, setNextId ] = useState(topic.length+1);
+  const [ nextId, setNextId ] = useState(topics.length+1);
 
   let content = null; // null 이라는 변수를 하나 만들어줌
   let contextControl = null; // 비어있는 null(아무것도 없는) 지역변수 
@@ -41,14 +41,8 @@ function App() { // State 란 상태값이 저장되는 변수
     
     let title, body;
     for (let topic of topics){
-
-
       if(topic.id === Number(id)){
-        
-        
         title = topic.title;
-        
-        
         body = topic.body;
         break;
       }
@@ -56,30 +50,33 @@ function App() { // State 란 상태값이 저장되는 변수
     content = <Article title={title} body={body}></Article>;
     // 클릭시 타이틀과 바디가 들어감
     
-    contextControl = <>
+    contextControl = <>;
     
     
     <li><a href={"/update/" + id} onClick={(e)=>{
     
     
       e.preventDefault();
-      
+    //  
       
       setMode("UPDATE");
+    // 모드는 업데이트로 변경
     }}>Update</a></li>
     
     
     <li><button onClick={(e)=>{
-      
+    // 현재 클릭한 항목 Id= State  
       
       const filterTopics=topics.filter((t)=>t.id !== Number(id));
-      
-      
+    // 객체 하나씩 가져와서 id State에서 걸러내서 새배열을 만들어 filterTopics에 넣음
+    //  
       setTopics(filterTopics);
-      
+    //  
       
       setMode("WELCOME");
-    }} >Delete</button></li>
+    }} >Delete</button>
+       {/* 삭제 버튼 */}
+    </li>
     </>
 
     }else if(mode === "CREATE"){
@@ -105,33 +102,37 @@ function App() { // State 란 상태값이 저장되는 변수
 
         setMode("READ"); //
       }} ></Create>
+//----------------------------------------------------------------- 업데이트 모드 -----------------------------------------------------------------------------
     }else if(mode === "UPDATE"){
-        
+    // Update 폼 새로만듬    
       
         let topic=topics.find((t)=>t.id === Number(id));
-          
+        //   
           content = <Update title={topic.title}body={topic.body} onUpdate={(title, body)=>{
+        // title 과 body 속성을 넘김, 객체자체를 넘겨도 무관
+        // Update 를 불러와 받음.
         
-        
-            const updateTopic = {id:Number(id), title, body};
-        
+            const updateTopic = {id:Number(id), title, body}; // {id:1,title:"html", body:"html"}
+        // 
         
             const updateTopics = [...topics];
-        
+        // 기존 topics(재료)를 가져와 [...topics]배열안에 (재료)를뿌려넣음
         
             for(let i=0; i<updateTopics.length; i++){
-        
+        //
         
               if(updateTopics[i].id === Number(id)){
-        
+        //
         
                 updateTopics[i] = updateTopic;
             break; 
           }
         }
-        setTopics(updateTopics);
-        setMode("READ");
-      }}></Update>
+        setTopics(updateTopics); //예약
+        setMode("READ"); //예약
+      }}> 
+
+      </Update>
     }
 
   return ( // <Nav topics={topics} onChangeMode={(id)=>{ alert(id);}}></Nav>

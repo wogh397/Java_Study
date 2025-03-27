@@ -1,14 +1,17 @@
 export default function Menu(props){ 
-// {menuList[{id,title, mode},{}]}, on
+// {menuList[{id,title, mode},{}]}, 전달받음
     // 빈 배열 
     // props.menuList는 재료만 있음
     const menuLst=[]; // 빈배열생성
     for(let m of props.menuList){
         const item = 
-        <a key={m.id} href="/"  onClick={(e)=>{
+        <a key={m.id} href="/"  style={{marginRight:"10px"}} onClick={(e)=>{
             e.preventDefault();
+            
             props.onChangeMode(m.mode)
+        
         }}>{m.title}</a>; // m에 props.menuList 이다.
+        
         menuLst.push(item);
     // const menuLst 빈배열에 item을 넣어준다.
     }
